@@ -5,6 +5,17 @@ class Component {
 
   state = { text: 'Initialize the Component' }
 
+  setState(newState) {
+    this.state = {
+      ...this.state,
+      ...newState
+    }
+  }
+
+  changeText(text) {
+    this.setState({ text })
+  }
+
   render() {
     const { text } = this.state;
     return (
@@ -13,7 +24,7 @@ class Component {
   }
 }
 
-function createElement (app,component) {
+function createElement(app, component) {
   const vdom = component.render();
   component.vdom = vdom;
   component.$el = render(vdom);
@@ -22,4 +33,4 @@ function createElement (app,component) {
 
 const app = document.getElementById('app');
 const component = new Component();
-createElement(app,component);
+createElement(app, component);

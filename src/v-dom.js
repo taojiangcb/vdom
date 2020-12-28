@@ -23,8 +23,5 @@ function setProps(element, props) {
 }
 
 function setProp(element, k, v) {
-  element.setAttribute(
-    k === 'className' ? 'class' : k,
-    v
-  )
+  element.setAttribute(k === 'className' ? 'class' : k, v)
 }
